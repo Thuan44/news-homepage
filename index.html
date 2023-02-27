@@ -1,16 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/style.css" rel="stylesheet" />
+        <title>Frontend Mentor | News homepage</title>
+    </head>
+    <body class="font-inter bg-offWhite relative">
+        <div
+            class="dark-overlay h-screen w-screen absolute bg-slate-900 opacity-50 hidden z-10"
+        ></div>
+        <div
+            class="container mx-auto max-w-screen-xl py-8 px-5 md:py-16 md:px-20"
+        >
+            <nav class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="w-12">
+                    <img src="/assets/images/logo.svg" alt="Logo" />
+                </div>
+                <!-- Nav links -->
+                <div class="hidden md:block">
+                    <ul
+                        class="nav-links text-darkGrayishBlue flex justify-between space-x-6"
+                    >
+                        <li class="hover:text-orange"><a href="#">Home</a></li>
+                        <li class="hover:text-orange"><a href="#">New</a></li>
+                        <li class="hover:text-orange">
+                            <a href="#">Popular</a>
+                        </li>
+                        <li class="hover:text-orange">
+                            <a href="#">Trending</a>
+                        </li>
+                        <li class="hover:text-orange">
+                            <a href="#">Categories</a>
+                        </li>
+                    </ul>
+                </div>
 
-  <style>
-  </style>
-</head>
-<body>
-</body>
+                <!-- Burger Menu -->
+                <button class="w-10 md:hidden">
+                    <img
+                        id="burgerIcon"
+                        src="/assets/images/icon-menu.svg"
+                        alt="Icône Menu"
+                    />
+                </button>
+            </nav>
+
+            <!-- Nav Links Mobile -->
+            <nav
+                class="mobile-menu bg-offWhite absolute top-0 right-0 hidden p-6 h-screen z-20"
+            >
+                <div class="w-60 ml-auto flex flex-col space-y-12">
+                    <button class="w-8 self-end">
+                        <img
+                            id="closeIcon"
+                            src="/assets/images/icon-menu-close.svg"
+                            alt="Icône Fermeture Menu"
+                        />
+                    </button>
+                    <ul
+                        class="nav-links-mobile text-darkGrayishBlue flex flex-col justify-between space-y-6"
+                    >
+                        <li class="hover:text-orange"><a href="#">Home</a></li>
+                        <li class="hover:text-orange"><a href="#">New</a></li>
+                        <li class="hover:text-orange">
+                            <a href="#">Popular</a>
+                        </li>
+                        <li class="hover:text-orange">
+                            <a href="#">Trending</a>
+                        </li>
+                        <li class="hover:text-orange">
+                            <a href="#">Categories</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <script>
+            const burgerIcon = document.getElementById("burgerIcon");
+            const closeIcon = document.getElementById("closeIcon");
+            const mobileMenu = document.querySelector(".mobile-menu");
+
+            const toggleNav = () => {
+                burgerIcon.classList.toggle("hidden");
+                mobileMenu.classList.toggle("hidden");
+            };
+
+            burgerIcon.addEventListener("click", toggleNav);
+            closeIcon.addEventListener("click", toggleNav);
+
+            const hideMobileMenu = () => {
+                if (window.innerWidth > 768) {
+                    burgerIcon.classList.remove("hidden");
+                    mobileMenu.classList.add("hidden");
+                }
+            };
+
+            window.addEventListener("resize", hideMobileMenu);
+
+            const darkOverlay = document.querySelector(".dark-overlay");
+
+            burgerIcon.addEventListener("click", () => {
+                darkOverlay.classList.remove("hidden");
+            });
+
+            closeIcon.addEventListener("click", () => {
+                darkOverlay.classList.add("hidden");
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 768) {
+                    darkOverlay.classList.add("hidden");
+                }
+            });
+
+            
+        </script>
+    </body>
 </html>
