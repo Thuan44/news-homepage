@@ -22,9 +22,9 @@
             class="dark-overlay h-screen w-screen absolute bg-slate-900 opacity-50 hidden z-10"
         ></div>
         <div
-            class="container mx-auto max-w-screen-xl py-8 px-5 md:py-16 md:px-20"
+            class="container mx-auto max-w-screen-lg py-8 px-5 md:py-16 md:px-20"
         >
-            <nav class="flex justify-between items-center">
+            <nav class="flex justify-between items-center mb-10">
                 <!-- Logo -->
                 <div class="w-12">
                     <img src="/assets/images/logo.svg" alt="Logo" />
@@ -87,6 +87,46 @@
                     </ul>
                 </div>
             </nav>
+
+            <!-- Main section -->
+            <div class="grid grid-cols-3 grid-rows-2 gap-5">
+                <div class="hero col-span-2 row-span-1">
+                    <img
+                        src="/assets/images/image-web-3-desktop.jpg"
+                        alt="Hero"
+                        class="w-full"
+                    />
+                </div>
+                <div
+                    class="sidemenu col-span-1 row-span-2 bg-veryDarkBlue"
+                ></div>
+                <div
+                    class="hero-title col-span-1 row-span-1 flex justify-center items-center"
+                >
+                    <h1
+                        class="text-5xl font-bold leading-none text-veryDarkBlue"
+                    >
+                        The Bright Future of Web 3.0 ?
+                    </h1>
+                </div>
+                <div
+                    class="hero-description col-span-1 row-span-1 flex flex-col justify-between items-start"
+                >
+                    <p class="text-darkGrayishBlue">
+                        We dive into the next evolution of the web and how it
+                        will impact the future of the internet. But is it really
+                        fulfilling its potential ?
+                        Hard to say, but we're excited to see what the future of the web will bring.
+                        Want to discover more about Web 3.0 ?
+                    </p>
+                    <a
+                        href="#"
+                        class="read-more-cta uppercase bg-red font-medium text-white px-6 py-2"
+                    >
+                        Read More
+                    </a>
+                </div>
+            </div>
         </div>
 
         <script>
@@ -126,8 +166,6 @@
                     darkOverlay.classList.add("hidden");
                 }
             });
-
-            
         </script>
     </body>
 </html>
