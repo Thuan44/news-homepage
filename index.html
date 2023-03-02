@@ -11,7 +11,7 @@
             href="./assets/images/favicon-32x32.png"
         />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet"
         />
         <link href="css/style.css" rel="stylesheet" />
@@ -19,10 +19,10 @@
     </head>
     <body class="font-inter bg-offWhite relative">
         <div
-            class="dark-overlay h-screen w-screen absolute bg-slate-900 opacity-50 hidden z-10"
+            class="dark-overlay h-full w-screen absolute bg-slate-900 opacity-50 hidden z-10"
         ></div>
         <div
-            class="container mx-auto max-w-screen-lg py-8 px-5 md:py-16 md:px-20"
+            class="container mx-auto max-w-screen-xl py-8 px-5 md:py-16 md:px-20"
         >
             <nav class="flex justify-between items-center mb-10">
                 <!-- Logo -->
@@ -60,7 +60,7 @@
 
             <!-- Nav Links Mobile -->
             <nav
-                class="mobile-menu bg-offWhite absolute top-0 right-0 hidden p-6 h-screen z-20"
+                class="mobile-menu bg-offWhite absolute top-0 right-0 hidden p-6 h-full z-20"
             >
                 <div class="w-60 ml-auto flex flex-col space-y-12">
                     <button class="w-8 self-end">
@@ -89,19 +89,51 @@
             </nav>
 
             <!-- Main section -->
-            <div class="grid grid-cols-3 grid-rows-2 gap-5">
-                <div class="hero col-span-2 row-span-1">
+            <section
+                class="grid grid-cols-1 grid-rows-8 gap-5 mb-16 md:grid-cols-3 md:grid-rows-2"
+            >
+                <!-- hero -->
+                <div
+                    class="row-start-1 col-span-1 row-span-2 md:col-span-2 md:row-span-1"
+                >
                     <img
+                        id="heroImage"
                         src="/assets/images/image-web-3-desktop.jpg"
                         alt="Hero"
-                        class="w-full"
+                        class="object-cover min-h-full md:w-full md:object-contain md:min-h-0"
                     />
                 </div>
+                <!-- Sidemenu -->
                 <div
-                    class="sidemenu col-span-1 row-span-2 bg-veryDarkBlue"
-                ></div>
+                    class="p-5 bg-veryDarkBlue row-start-5 md:col-span-1 md:row-span-2"
+                >
+                    <h2 class="text-orange font-semibold text-2xl mb-6">New</h2>
+                    <div
+                        class="article-preview text-white border-b-2 border-b-darkGrayishBlue pb-8 mb-8"
+                    >
+                        <h3 class="font-semibold">Hydrogen Vs Electric cars</h3>
+                        <p class="font-light text-grayishBlue">
+                            Will hydrogen-fueled cars ever catch up to EVs ?
+                        </p>
+                    </div>
+                    <div
+                        class="article-preview text-white border-b-2 border-b-darkGrayishBlue pb-8 mb-8"
+                    >
+                        <h3 class="font-semibold">Hydrogen Vs Electric cars</h3>
+                        <p class="font-light text-grayishBlue">
+                            Will hydrogen-fueled cars ever catch up to EVs ?
+                        </p>
+                    </div>
+                    <div class="article-preview text-white pb-8">
+                        <h3 class="font-semibold">Hydrogen Vs Electric cars</h3>
+                        <p class="font-light text-grayishBlue">
+                            Will hydrogen-fueled cars ever catch up to EVs ?
+                        </p>
+                    </div>
+                </div>
+                <!-- Hero title -->
                 <div
-                    class="hero-title col-span-1 row-span-1 flex justify-center items-center"
+                    class="row-span-1 row-start-3 flex justify-center items-center md:col-span-1 md:row-span-1"
                 >
                     <h1
                         class="text-5xl font-bold leading-none text-veryDarkBlue"
@@ -109,27 +141,73 @@
                         The Bright Future of Web 3.0 ?
                     </h1>
                 </div>
+                <!-- TODO: Prevent row to stretch vertically under 1024px-->
+                <!-- Hero description -->
                 <div
-                    class="hero-description col-span-1 row-span-1 flex flex-col justify-between items-start"
+                    class="row-span-1 row-start-4 mb-8 flex flex-col justify-between space-y-6 items-start md:col-span-1 md:row-span-1 md:mb-0"
                 >
-                    <p class="text-darkGrayishBlue">
+                    <p id="heroParagraph" class="text-darkGrayishBlue">
                         We dive into the next evolution of the web and how it
                         will impact the future of the internet. But is it really
-                        fulfilling its potential ?
-                        Hard to say, but we're excited to see what the future of the web will bring.
-                        Want to discover more about Web 3.0 ?
+                        fulfilling its potential ? Hard to say, but we're
+                        excited to see what the future of the web will bring.
                     </p>
                     <a
                         href="#"
-                        class="read-more-cta uppercase bg-red font-medium text-white px-6 py-2"
+                        class="read-more-cta uppercase tracking-widest w-44 text-center bg-red font-medium text-white px-6 py-2 transition-all ease-linear hover:bg-veryDarkBlue :hover-text-white"
                     >
                         Read More
                     </a>
                 </div>
-            </div>
+            </section>
+
+            <!-- Articles section -->
+            <section class="grid grid-cols-1 grid-rows-3 gap-10 md:grid-cols-3 md:grid-rows-1 md:gap-5">
+                <!-- Article 1 -->
+                <a href="#" class="group flex justify-between items-center gap-5 md:gap-3">
+                    <div class="w-auto h-full md:w-1/3">
+                        <img src="/assets/images/image-retro-pcs.jpg" alt="Retro PCs" class="w-full">
+                    </div>
+                    <div class="w-2/3 flex flex-col items-start justify-evenly h-full gap-3 md:gap-1 md:justify-between">
+                        <h2 class="text-4xl font-medium text-grayishBlue md:text-3xl">
+                            01
+                        </h2>
+                        <h3 class="text-xl font-bold text-veryDarkBlue md:text-lg group-hover:text-orange">Reviving Retro PCs</h3>
+                        <p class="hidden text-grayishBlue xs:block sm:hidden lg:block">What happens when old PCs are given modern upgrades ?</p>
+                    </div>
+                </a>
+                <!-- Article 2 -->
+                <a href="#" class="group flex justify-between items-center gap-5 md:gap-3">
+                    <div class="w-auto h-full md:w-1/3">
+                        <img src="/assets/images/image-top-laptops.jpg" alt="Laptops" class="w-full">
+                    </div>
+                    <div class="w-2/3 flex flex-col items-start justify-evenly h-full gap-3 md:gap-1 md:justify-between">
+                        <h2 class="text-4xl font-medium text-grayishBlue md:text-3xl">
+                            02
+                        </h2>
+                        <h3 class="text-xl font-bold text-veryDarkBlue md:text-lg group-hover:text-orange">Top 10 Laptops of 2022</h3>
+                        <p class="hidden text-grayishBlue xs:block sm:hidden lg:block">Our best picks for various needs and budgets</p>
+                    </div>
+                </a>
+                <!-- Article 3 -->
+                <a href="#" class="group flex justify-between items-center gap-5 md:gap-3">
+                    <div class="w-auto h-full md:w-1/3">
+                        <img src="/assets/images/image-gaming-growth.jpg" alt="Game controller" class="w-full">
+                    </div>
+                    <div class="w-2/3 flex flex-col items-start justify-evenly h-full gap-3 md:gap-1 md:justify-between">
+                        <h2 class="text-4xl font-medium text-grayishBlue md:text-3xl">
+                            03
+                        </h2>
+                        <h3 class="text-xl font-bold text-veryDarkBlue md:text-lg group-hover:text-orange">The Growth of Gaming</h3>
+                        <p class="hidden text-grayishBlue xs:block sm:hidden lg:block">Ho the pandemic has sparked fresh opportunities</p>
+                    </div>
+                </a>
+            </section>
         </div>
 
         <script>
+            const darkOverlay = document.querySelector(".dark-overlay");
+            const heroImage = document.getElementById("heroImage");
             const burgerIcon = document.getElementById("burgerIcon");
             const closeIcon = document.getElementById("closeIcon");
             const mobileMenu = document.querySelector(".mobile-menu");
@@ -139,9 +217,6 @@
                 mobileMenu.classList.toggle("hidden");
             };
 
-            burgerIcon.addEventListener("click", toggleNav);
-            closeIcon.addEventListener("click", toggleNav);
-
             const hideMobileMenu = () => {
                 if (window.innerWidth > 768) {
                     burgerIcon.classList.remove("hidden");
@@ -149,21 +224,37 @@
                 }
             };
 
-            window.addEventListener("resize", hideMobileMenu);
-
-            const darkOverlay = document.querySelector(".dark-overlay");
-
             burgerIcon.addEventListener("click", () => {
+                toggleNav();
                 darkOverlay.classList.remove("hidden");
             });
-
             closeIcon.addEventListener("click", () => {
+                toggleNav();
                 darkOverlay.classList.add("hidden");
             });
 
             window.addEventListener("resize", () => {
+                hideMobileMenu();
                 if (window.innerWidth > 768) {
                     darkOverlay.classList.add("hidden");
+                    heroImage.src = "/assets/images/image-web-3-desktop.jpg";
+                }
+
+                if (window.innerWidth < 768) {
+                    // Change the hero img src to the mobile version
+                    heroImage.src = "/assets/images/image-web-3-mobile.jpg";
+                }
+            });
+
+            // On load, check window width and change hero img src accordingly
+            window.addEventListener("load", () => {
+                if (window.innerWidth > 768) {
+                    heroImage.src = "/assets/images/image-web-3-desktop.jpg";
+                }
+
+                if (window.innerWidth < 768) {
+                    // Change the hero img src to the mobile version
+                    heroImage.src = "/assets/images/image-web-3-mobile.jpg";
                 }
             });
         </script>
