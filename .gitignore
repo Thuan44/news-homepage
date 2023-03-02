@@ -16,4 +16,4 @@
 .prettierignore
 
 # Avoir VsCode
-.vscode
+.vscode/*
